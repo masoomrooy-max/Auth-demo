@@ -1,0 +1,510 @@
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f4f7fb;
+  color: #1e293b;
+}
+
+/* Main page layout */
+#root {
+  min-height: 100vh;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 40px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+}
+
+nav a {
+  color: #334155;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 20px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: #2563eb;
+}
+
+/* Buttons */
+button {
+  padding: 11px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 8px 0 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* Headings */
+h1,
+h2 {
+  color: #0f172a;
+}
+
+/* Small-screen layout */
+@media (max-width: 600px) {
+  nav {
+    padding: 16px;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    margin-right: 12px;
+  }
+}
+.login-card {
+  width: 360px;
+  max-width: calc(100% - 32px);
+  margin: 80px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.login-card h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.nav-username {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 12px;
+  margin-right: 12px;
+  border-radius: 8px;
+  background-color: #eff6ff;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.dashboard-card {
+  width: 600px;
+  max-width: calc(100% - 32px);
+  margin: 60px auto;
+  padding: 36px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.08);
+}
+
+.dashboard-card h1 {
+  margin-top: 0;
+  color: #0f172a;
+}
+
+.dashboard-card p {
+  color: #475569;
+  font-size: 16px;
+}
+.login-subtitle {
+  margin-bottom: 24px;
+  color: #64748b;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.dashboard-card p {
+  line-height: 1.7;
+}
+
+/* Home page */
+.home-page {
+  min-height: calc(100vh - 75px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 16px;
+}
+
+.home-card {
+  width: 600px;
+  max-width: 100%;
+  padding: 40px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
+}
+
+.home-badge {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.home-card h1 {
+  margin: 22px 0 12px;
+  font-size: 30px;
+}
+
+.home-description {
+  color: #64748b;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.current-user {
+  margin-top: 28px;
+  padding: 22px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.user-label {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.current-user h2 {
+  margin: 10px 0;
+  font-size: 22px;
+  overflow-wrap: anywhere;
+}
+
+.status {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.status.logged-in {
+  color: #15803d;
+  font-weight: 600;
+}
+
+@media (max-width: 480px) {
+  .home-card {
+    padding: 26px 20px;
+  }
+
+  .home-card h1 {
+    font-size: 25px;
+  }
+}
+
+.home-login-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 20px;
+  background-color: #2563eb;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.home-login-link:hover {
+  background-color: #1d4ed8;
+}
+
+/* Dashboard layout */
+.dashboard-page {
+  min-height: calc(100vh - 70px);
+  padding: 42px 24px;
+  background: #f4f7fb;
+}
+
+.dashboard-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Welcome section */
+.dashboard-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+.dashboard-eyebrow {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.dashboard-welcome h1 {
+  margin: 10px 0;
+  font-size: 30px;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-welcome p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.profile-avatar {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: #2563eb;
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* Summary cards */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.dashboard-info-card {
+  min-width: 0;
+  padding: 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.03);
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 21px;
+}
+
+.blue-icon {
+  background: #dbeafe;
+}
+
+.green-icon {
+  background: #dcfce7;
+}
+
+.purple-icon {
+  background: #ede9fe;
+}
+
+.dashboard-info-card p {
+  margin: 18px 0 6px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.dashboard-info-card h2 {
+  margin: 0 0 8px;
+  font-size: 19px;
+  overflow-wrap: anywhere;
+}
+
+.dashboard-info-card > span {
+  color: #94a3b8;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Main actions card */
+.dashboard-main-card {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(15, 23, 42, 0.04);
+}
+
+.dashboard-main-card > h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.quick-description {
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.dashboard-actions {
+  display: grid;
+  gap: 12px;
+}
+
+.dashboard-action {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  color: #1e293b;
+  text-decoration: none;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.dashboard-action:hover {
+  border-color: #93c5fd;
+  background: #f8fbff;
+}
+
+.dashboard-action > span:first-child {
+  font-size: 23px;
+}
+
+.dashboard-action div {
+  display: grid;
+  flex: 1;
+  gap: 5px;
+}
+
+.dashboard-action strong {
+  font-size: 14px;
+}
+
+.dashboard-action small {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.action-arrow {
+  color: #2563eb;
+  font-size: 22px;
+}
+
+.action-check {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+/* Logout area */
+.dashboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 26px;
+  padding-top: 22px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.dashboard-footer strong {
+  color: #0f172a;
+  font-size: 14px;
+}
+
+.dashboard-footer p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dashboard-logout {
+  margin: 0;
+  background: #dc2626;
+}
+
+.dashboard-logout:hover {
+  background: #b91c1c;
+}
+
+.dashboard-note {
+  margin-top: 24px;
+  color: #94a3b8;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .dashboard-page {
+    padding: 28px 16px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-welcome h1 {
+    font-size: 25px;
+  }
+
+  .dashboard-main-card {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 400px) {
+  .dashboard-welcome {
+    align-items: flex-start;
+  }
+
+  .profile-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .dashboard-footer {
+    align-items: stretch;
+  }
+}
